@@ -117,6 +117,7 @@ const numberRegex = /[0-9]/;
 
 const specialCharRegex = /[^a-zA-Z0-9]/;
 
+// checks for the kinds of characters inside the password and assigns a score depending on what it finds
 function kindsOfCharactersCheck() {
     var hasLowerLetter = false;
     var hasUpperLetter = false;
@@ -151,6 +152,7 @@ function passwordLengthStrengthCheck() {
         strengthScore += 0.67
     }
 }
+
 
 function repeatedCharacterCheck() {
     var repeatedCharScore = 33.33;
@@ -219,7 +221,7 @@ function downloadSavedPasswords() {
         URL.revokeObjectURL(url);
     }
 }
-
+// incorporates the fisher-yates shuffling algorithim to shuffle the array that gets passed in
 function shuffleArray(array) {
     var i = array.length, j, temp;
     while(--i > 0) {
@@ -244,7 +246,7 @@ function generatePassword(array) {
 
     document.querySelector("#password-output").textContent = generatedPassword;
 }
-
+// takes user input for the length of the password
 function getUserInput() {
     userInput = document.querySelector("input").value;
     userInput = Number(userInput);
