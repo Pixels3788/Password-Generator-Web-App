@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Password Generator</title>
+        <link rel="stylesheet" href="./styles.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div class="inner-container">
+                <p>
+                    This password generator will generate a
+                    password between 8-50 characters(or words). 
+                    select a parameter from below, input the amount
+                    of characters(or words if you are using the random words selection)
+                    and then hit generate and you will have your new password.
+                    If you aren't satisfied with the password generated simply
+                    hit the generate button again and you will get a new one :).
+
+                </p>
+                <input class="input-box" type="number" min="8" max="50" id="userInput1" placeholder="Enter the number of characters or words you want in your password (1-50)"> 
+                <select class="dropdown" id="dropdownSelection">
+                    <option>Please select the kind of password you want</option>
+                    <option>letters, numbers, and symbols</option>
+                    <option>Numbers and letters</option>
+                    <option>Numbers and symbols</option>
+                    <option>Letters and symbols</option>
+                    <option>Letters only</option>
+                    <option>Symbols only</option>
+                    <option>Series of random words</option>
+                </select>
+                <button class="btn" onclick="handleGenerate()">Generate Password</button>
+                <button class="btn" onclick="savePassword()">Save Password</button>
+                <button class="btn" onclick="downloadSavedPasswords()">Download Saved Passwords</button>
+                <p class="paragraph-border" id="password-output">The password will be generated here</p>
+                <p class="password-strength" id="password-strength-box">Password Strength:</p>
+                
+            </div>
+        </div>
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+        <script src="./passwordGeneration.js" charset="UTF-8"></script>
+    </body>
+</html>
